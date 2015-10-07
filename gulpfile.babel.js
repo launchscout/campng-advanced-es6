@@ -49,7 +49,8 @@ gulp.task('serve', () => {
   serve({
     port: process.env.PORT || 3000,
     open: false,
-    server: { baseDir: root }
+    serveStatic: [root],
+    proxy: "localhost:8000"
   });
 });
 

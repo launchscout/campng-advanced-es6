@@ -34,7 +34,9 @@
     "stylus-loader": "^1.1.1",
     "webpack": "^1.9.5",
     "webpack-stream": "^2.0.0",
-    "yargs": "^3.9.0"
+    "yargs": "^3.9.0",
+    "express": "*",
+    "underscore": "*"
   },
   "scripts": {
     "test": "karma start"
