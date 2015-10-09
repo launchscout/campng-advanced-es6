@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <div class="col-md-3">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="candidate in vm.candidates">{{candidate.name}}</li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <div ui-view></div>
+  </div>
+</div>
