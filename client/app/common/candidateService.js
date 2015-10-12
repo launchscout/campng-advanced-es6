@@ -9,6 +9,19 @@ class CandidateService {
       return response.data;
     });
   }
+
+  get(candidateId) {
+    return this.http.get(`/candidates/${candidateId}`).then( (response) => {
+      return response.data;
+    });
+  }
+
+  create(candidate) {
+    return this.http.post("/candidates", candidate).then( (response) => {
+      return response.data;
+    });
+  }
+
 }
 
 CandidateService.$inject = ["$http"];

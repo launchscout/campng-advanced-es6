@@ -32,6 +32,9 @@ function createCandidate(candidate) {
 }
 
 var app = express();
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
 
 app.post('/login', function(req, res) {
   res.json({ message: 'logging in!' });
@@ -50,6 +53,7 @@ app.get('/candidates/:id', function (req, res) {
 });
 
 app.post("/candidates", function(req, res) {
+  console.log(req.body);
   res.json(createCandidate(req.body));
 });
 
