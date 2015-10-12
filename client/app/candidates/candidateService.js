@@ -10,6 +10,12 @@ class CandidateService {
     });
   }
 
+  get(candidateId) {
+    return this.http.get(`/candidates/${candidateId}`).then( (response) => {
+      return response.data;
+    });
+  }
+
 }
 
 CandidateService.$inject = ["$http"];
