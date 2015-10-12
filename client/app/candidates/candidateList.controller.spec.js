@@ -12,14 +12,14 @@ describe('CandidateListController', () => {
     promise= sinon.stub().returnsPromise();
     serviceMock = {
       query() {
-        return promise;
+        return promise();
       }
     }
-    candidateListController = new CandidateListController(serviceMock);
   });
 
   it("queries the candidate list", () => {
     promise.resolves([{name: "Bob"}]);
+    candidateListController = new CandidateListController(serviceMock);
     expect(candidateListController.candidates.length).to.equal(1);
   });
 });
