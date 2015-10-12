@@ -10,7 +10,8 @@ import 'normalize.css';
 angular.module('app', [
   uiRouter,
   Common.name,
-  Components.name
+  Components.name,
+  Candidates.name
 ])
 
 .directive('app', AppComponent);
