@@ -30,4 +30,15 @@ describe('CandidateService', () => {
     httpBackend.flush();
   });
 
+  it("should create candidates", function() {
+    let candidate = {name: "Bob"};
+    let retrievedCandidate = {};
+    httpBackend.expectPOST('/candidates', JSON.stringify(candidate)).respond({name: "Bob", id: 1});
+    candidateService.create(candidate).then( (candidate) => {
+      retrievedCandidate = candidate;
+      expect(retrievedCandidate.id).to.equal(1);
+    });
+    httpBackend.flush();
+  });
+
 });
