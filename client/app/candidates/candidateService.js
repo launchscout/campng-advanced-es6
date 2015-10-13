@@ -16,6 +16,12 @@ class CandidateService {
     });
   }
 
+  create(candidate) {
+    return this.http.post("/candidates", candidate).then( (response) => {
+      return response.data;
+    });
+  }
+
 }
 
 CandidateService.$inject = ["$http"];
