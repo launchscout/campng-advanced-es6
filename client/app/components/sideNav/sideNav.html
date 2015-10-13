@@ -1,0 +1,4 @@
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="candidate in vm.candidates"><a ui-sref="showCandidate({id: candidate.id})">{{candidate.name}}</a></li>
+</ul>
+<a ui-sref="newCandidate">New Candidate</a>
