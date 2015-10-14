@@ -9,7 +9,12 @@ let starRatingComponent = function () {
     },
     link(scope, element, attrs) {
       jQuery(element).raty({
-        path: "/images"
+        path: "/images",
+        click(score, event) {
+          scope.$apply(function() {
+            scope.rating = score;
+          });
+        }
       });
       scope.$watch("rating", function(rating) {
         jQuery(element).raty("score", rating);
