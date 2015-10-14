@@ -17,6 +17,13 @@ let starRatingComponent = function () {
       modelController.$render = function() {
         jQuery(element).raty("score", this.$viewValue);
       };
+      modelController.$formatters.push(function(modelValue) {
+        return modelValue / 20;
+      });
+      modelController.$parsers.push(function(viewValue) {
+        return viewValue * 20;
+      });
+
     }
   };
 };
