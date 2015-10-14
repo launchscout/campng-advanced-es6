@@ -4,12 +4,17 @@ import showTemplate from './show.html'
 import newTemplate from './new.html';
 import editTemplate from './edit.html';
 import CandidateService from './candidateService';
+import CandidateForm from './candidateForm/candidateForm';
+
 import CandidateListController from './candidateList.controller';
 import ShowCandidateController from './show.controller';
 import NewCandidateController from './new.controller';
 import EditCandidateController from './edit.controller';
 
-let CandidatesModule = angular.module('candidates', [uiRouter])
+let CandidatesModule = angular.module('candidates', [
+  uiRouter,
+  CandidateForm.name
+])
 
 .config(($stateProvider) => {
 
