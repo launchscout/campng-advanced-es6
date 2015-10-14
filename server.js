@@ -17,8 +17,8 @@ var express = require('express');
 var _ = require("underscore");
 
 var candidates = [
-  {id: 1, name: "John Doe", email: "john.doe@example.com"},
-  {id: 2, name: "Jane Doe", email: "jane.doe@example.com"},
+  {id: 1, name: "John Doe", email: "john.doe@example.com", rating: 1},
+  {id: 2, name: "Jane Doe", email: "jane.doe@example.com", rating: 4},
 ];
 
 function findCandidate(id) {
