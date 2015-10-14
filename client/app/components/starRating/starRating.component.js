@@ -4,21 +4,19 @@ import "raty";
 let starRatingComponent = function () {
   return {
     restrict: 'EA',
-    scope: {
-      rating: "="
-    },
-    link(scope, element, attrs) {
+    require: "ngModel",
+    link(scope, element, attrs, modelController) {
       jQuery(element).raty({
         path: "/images",
         click(score, event) {
           scope.$apply(function() {
-            scope.rating = score;
+            modelController.$setViewValue(score);
           });
         }
       });
-      scope.$watch("rating", function(rating) {
-        jQuery(element).raty("score", rating);
-      });
+      modelController.$render = function() {
+        jQuery(element).raty("score", this.$viewValue);
+      };
     }
   };
 };
