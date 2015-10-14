@@ -5,9 +5,12 @@ import Components from './components/components';
 import AppComponent from './app.component';
 import Candidates from './candidates/candidates';
 import Filters from './filters/filters';
+import { markdown } from "markdown";
 
 import "bootstrap-webpack";
 import 'normalize.css';
+
+console.log(markdown.toHTML("**foo**"));
 
 angular.module('app', [
   uiRouter,
