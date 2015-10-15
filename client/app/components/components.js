@@ -4,13 +4,15 @@ import About from './about/about';
 import SideNav from './sideNav/sideNav';
 import starRating from './starRating/starRating';
 import markdownEditor from './markdownEditor/markdownEditor';
+import dollarInputGroup from './dollarInputGroup/dollarInputGroup';
 
 let componentModule = angular.module('app.components', [
   Home.name,
   About.name,
   SideNav.name,
   markdownEditor.name,
-  starRating.name
+  starRating.name,
+  dollarInputGroup.name
 ]);
 
 export default componentModule;
