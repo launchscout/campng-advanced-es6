@@ -4,12 +4,19 @@
     <input type="text" class="form-control" id="name" placeholder="Enter Name" ng-model="vm.candidate.name">
   </div>
   <div class="form-group">
-    <label for="name">Resume</label>
+    <label for="resume">Resume</label>
     <div markdown-editor text="vm.candidate.resume"></div>
   </div>
   <div class="form-group">
-    <label for="name">Rating</label>
+    <label for="rating">Rating</label>
     <div star-rating ng-model="vm.candidate.rating"></div>
   </div>
+  <div class="form-group">
+    <label for="salary">Rating</label>
+    <dollar-input-group>
+      <input type="text" class="form-control" id="salary" ng-model="vm.candidate.salary">
+    </dollar-input-group>
+  </div>
+
   <button type="submit" class="btn btn-default" ng-click="vm.save()">Save</button>
 </form>
