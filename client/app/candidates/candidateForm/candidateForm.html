@@ -1,4 +1,4 @@
-<form role="form">
+<form role="form" name="candidateForm">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" placeholder="Enter Name" ng-model="vm.candidate.name">
@@ -16,6 +16,11 @@
     <dollar-input-group>
       <input type="text" class="form-control" id="salary" ng-model="vm.candidate.salary">
     </dollar-input-group>
+  </div>
+  <div class="form-group" ng-class="{'has-error': candidateForm.ssn.$invalid}">
+    <label class='control-label' for="ssn">Social Security #</label>
+    <input type="text" class="form-control" id="ssn" name="ssn" ssn="true" ng-model="vm.candidate.ssn">
+    <span class="help-block" ng-show="candidateForm.ssn.$error.ssn">Invalid SSN</span>
   </div>
 
   <button type="submit" class="btn btn-default" ng-click="vm.save()">Save</button>
