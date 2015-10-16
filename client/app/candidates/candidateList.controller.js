@@ -1,11 +1,19 @@
 class CandidateListController {
-  constructor(CandidateService) {
-    CandidateService.query().then( (candidates) => {
+  constructor(CandidateService, $scope) {
+    this.candidateService = CandidateService;
+    this.fetchCandidates();
+    $scope.$on("candidateChange", () => {
+      this.fetchCandidates();
+    });
+  }
+
+  fetchCandidates() {
+    this.candidateService.query().then( (candidates) => {
       this.candidates = candidates;
     });
   }
 }
 
-CandidateListController.$inject = ["CandidateService"];
+CandidateListController.$inject = ["CandidateService", "$scope"];
 
 export default CandidateListController;
