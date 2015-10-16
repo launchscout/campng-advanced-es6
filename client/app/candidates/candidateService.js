@@ -1,6 +1,7 @@
 class CandidateService {
-  constructor($http) {
+  constructor($http, $rootScope) {
     this.http = $http;
+    this.rootScope = $rootScope;
   }
 
   query() {
@@ -18,18 +19,20 @@ class CandidateService {
 
   create(candidate) {
     return this.http.post("/candidates", candidate).then( (response) => {
+      this.rootScope.$broadcast("candidateChange", candidate);
       return response.data;
     });
   }
 
   update(candidate) {
     return this.http.post(`/candidates/${candidate.id}`, candidate).then( (response) => {
+      this.rootScope.$broadcast("candidateChange", candidate);
       return response.data;
     });
   }
 
 }
 
-CandidateService.$inject = ["$http"];
+CandidateService.$inject = ["$http", "$rootScope"];
 
 export default CandidateService;
