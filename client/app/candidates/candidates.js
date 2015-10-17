@@ -9,7 +9,7 @@ let CandidatesModule = angular.module('candidates', [uiRouter])
 
 .config(($stateProvider) => {
   $stateProvider.state('showCandidate', {
-    url: '/candidates/:candidateId',
+    url: '/candidates/:id',
     template: showTemplate,
     controller: ShowCandidateController,
     controllerAs: "vm"
