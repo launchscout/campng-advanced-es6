@@ -4,8 +4,7 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 
-import "bootstrap-webpack";
-import 'normalize.css';
+// import 'normalize.css';
 
 angular.module('app', [
   uiRouter,
