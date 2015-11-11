@@ -6,7 +6,6 @@
   "dependencies": {
     "angular": "^1.4.4",
     "angular-ui-router": "^0.2.15",
-    "bootstrap-webpack": "0.0.5",
     "jquery": "^2.1.4",
     "lodash": "^3.8.0",
     "markdown": "^0.5.0",

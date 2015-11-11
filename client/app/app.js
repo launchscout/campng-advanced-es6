@@ -7,7 +7,6 @@ import Candidates from './candidates/candidates';
 import Filters from './filters/filters';
 import { markdown } from "markdown";
 
-import "bootstrap-webpack";
 import 'normalize.css';
 
 jQuery( () => {
